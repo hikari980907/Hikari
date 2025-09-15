@@ -5,72 +5,68 @@
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
-
-/* Global Colors - 사진 추출 색상 기반 레트로 시스템 */
+/* Global Colors - 첨부 이미지 색상 기반 다크 시스템 */
 :root { 
-  --background-color: #efebd9; /* 사진 추출 크림 베이지 - 따뜻한 배경 */
-  --default-color: #464431; /* 사진 추출 다크 올리브 - 메인 텍스트 */
-  --heading-color: #3a3525; /* #464431 어둡게 조정 - 강조 제목용 */
-  --accent-color: #878f5a; /* 사진 추출 올리브 그린 - 메인 포인트 */
-  --surface-color: #f4f0e7; /* #efebd9 밝게 조정 - 카드 배경 */
-  --contrast-color: #efebd9; /* 악센트 배경용 대비색 */
+  --background-color: #1A1A1A; /* Jet Black - 어두운 배경 */
+  --default-color: #E0E0E0; /* Platinum - 메인 텍스트 */
+  --heading-color: #BFBFBF; /* Ash - 강조 제목용 */
+  --accent-color: #353A3E; /* Graphite - 메인 포인트 */
+  --surface-color: #222526; /* Onyx - 카드 배경 */
+  --contrast-color: #E0E0E0; /* Platinum - 악센트 배경용 대비색 */
 }
 
-/* Nav Menu Colors - 추출 색상 네비게이션 시스템 */
+/* Nav Menu Colors - 개선된 대비로 네비게이션 시스템 */
 :root {
-  --nav-color: #464431; /* 사진 추출 다크 올리브 네비 */
-  --nav-hover-color: #878f5a; /* 사진 추출 올리브 그린 호버 */
-  --nav-mobile-background-color: #efebd9; /* 사진 추출 크림 모바일 배경 */
-  --nav-dropdown-background-color: #f4f0e7; /* 밝은 크림 드롭다운 */
-  --nav-dropdown-color: #464431; /* 사진 추출 다크 올리브 텍스트 */
-  --nav-dropdown-hover-color: #878f5a; /* 사진 추출 올리브 그린 호버 */
+  --nav-color: #E0E0E0; /* Platinum - 네비 텍스트 (기존 유지) */
+  --nav-hover-color: #909090; /* 개선된 중간 회색 - 뚜렷한 호버 효과 */
+  --nav-mobile-background-color: #1A1A1A; /* Jet Black - 모바일 배경 */
+  --nav-dropdown-background-color: #222526; /* Onyx - 드롭다운 배경 */
+  --nav-dropdown-color: #E0E0E0; /* Platinum - 드롭다운 텍스트 */
+  --nav-dropdown-hover-color: #909090; /* 개선된 중간 회색 - 드롭다운 호버 */
 }
 
-/* Photo Color Presets - 사진 색상 기반 변형 */
+/* Photo Color Presets - 첨부 이미지 색상 기반 변형 */
 .warm-vintage {
-  --background-color: #f4f0e7; /* 더 밝은 크림 - 부드러운 섹션 */
-  --surface-color: #efebd9; /* 원본 크림 카드 */
-  --accent-color: #878f5a; /* 원본 올리브 그린 유지 */
+  --background-color: #222526; /* Onyx - 부드러운 섹션 */
+  --surface-color: #353A3E; /* Graphite - 카드 */
+  --accent-color: #BFBFBF; /* Ash - 포인트 색상 */
 }
 
 .deep-retro {
-  --background-color: #464431; /* 원본 다크 올리브 배경 */
-  --default-color: #efebd9; /* 원본 크림 텍스트 */
-  --heading-color: #f4f0e7; /* 밝은 크림 제목 */
-  --surface-color: #5a5340; /* #464431 밝게 조정된 카드 */
-  --contrast-color: #464431; /* 다크모드 대비색 */
+  --background-color: #1A1A1A; /* Jet Black - 가장 어두운 배경 */
+  --default-color: #E0E0E0; /* Platinum - 텍스트 */
+  --heading-color: #BFBFBF; /* Ash - 제목 */
+  --surface-color: #222526; /* Onyx - 카드 */
+  --contrast-color: #353A3E; /* Graphite - 대비색 */
 }
 
-/* Original Color Variations - 원본 색상 명도 조정 */
-.light-olive-accent {
-  --accent-color: #9ba96b; /* #878f5a 밝게 조정 */
-  --nav-hover-color: #9ba96b;
-  --nav-dropdown-hover-color: #9ba96b;
+/* Original Color Variations - 개선된 대비 적용 */
+.light-accent {
+  --accent-color: #BFBFBF; /* Ash - 밝은 액센트 */
+  --nav-hover-color: #909090; /* 개선된 호버 색상 */
+  --nav-dropdown-hover-color: #909090;
 }
 
-.dark-olive-accent {
-  --accent-color: #6b7548; /* #878f5a 어둡게 조정 */
-  --nav-hover-color: #6b7548;
-  --nav-dropdown-hover-color: #6b7548;
+.dark-accent {
+  --accent-color: #222526; /* Onyx - 어두운 액센트 */
+  --nav-hover-color: #808080; /* 더 어두운 호버 변형 */
+  --nav-dropdown-hover-color: #808080;
 }
 
-/* Retro Anime Texture - 원본 색상 기반 질감 */
+/* Retro Anime Texture - 첨부 이미지 색상 기반 질감 */
 .vintage-paper {
   background-image: 
-    radial-gradient(circle at 25% 30%, rgba(135, 143, 90, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 75% 70%, rgba(70, 68, 49, 0.02) 0%, transparent 40%),
-    linear-gradient(135deg, rgba(239, 235, 217, 0.05) 0%, transparent 100%);
+    radial-gradient(circle at 25% 30%, rgba(53, 58, 62, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 75% 70%, rgba(34, 37, 38, 0.02) 0%, transparent 40%),
+    linear-gradient(135deg, rgba(191, 191, 191, 0.05) 0%, transparent 100%);
 }
 
 .manga-dots {
   background-image: 
-    radial-gradient(circle at 20% 20%, rgba(135, 143, 90, 0.04) 2px, transparent 2px),
-    radial-gradient(circle at 80% 80%, rgba(70, 68, 49, 0.03) 1px, transparent 1px);
+    radial-gradient(circle at 20% 20%, rgba(53, 58, 62, 0.04) 2px, transparent 2px),
+    radial-gradient(circle at 80% 80%, rgba(34, 37, 38, 0.03) 1px, transparent 1px);
   background-size: 40px 40px, 20px 20px;
 }
-
-
-
 
 /* Smooth scroll */
 :root {
