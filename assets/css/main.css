@@ -103,57 +103,6 @@ h6 {
   font-family: var(--heading-font);
 }
 
-/* PHP Email Form Messages
-------------------------------*/
-.php-email-form .error-message {
-  display: none;
-  background: #df1529;
-  color: #ffffff;
-  text-align: left;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .sent-message {
-  display: none;
-  color: #ffffff;
-  background: #059652;
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-  font-weight: 600;
-}
-
-.php-email-form .loading {
-  display: none;
-  background: var(--surface-color);
-  text-align: center;
-  padding: 15px;
-  margin-bottom: 24px;
-}
-
-.php-email-form .loading:before {
-  content: "";
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid var(--accent-color);
-  border-top-color: var(--surface-color);
-  animation: php-email-form-loading 1s linear infinite;
-}
-
-@keyframes php-email-form-loading {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*--------------------------------------------------------------
 # Global Header
@@ -531,80 +480,91 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+ /* GIF 배경을 위한 CSS (간단함!) */
 .hero {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* GIF 배경 설정 - 이게 전부! */
+    background-image: url('../img/logo_s.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+/* 텍스트 가독성을 위한 오버레이 (선택사항) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .hero .container {
-  position: relative;
-  z-index: 3;
+    position: relative;
+    z-index: 2;
 }
 
 .hero h2 {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 700;
+    margin: 0;
+    font-size: 64px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }
 
 .hero p {
-  margin: 5px 0 0 0;
-  font-size: 26px;
+    margin: 5px 0 0 0;
+    font-size: 26px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
 .hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .hero .social-links {
-  margin-top: 25px;
+    margin-top: 25px;
 }
 
 .hero .social-links a {
-  font-size: 20px;
-  display: inline-block;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  line-height: 1;
-  margin-right: 20px;
-  transition: 0.3s;
+    font-size: 20px;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1;
+    margin-right: 20px;
+    transition: 0.3s;
 }
 
 .hero .social-links a:hover {
-  color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 @media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
-  }
+    .hero h2 {
+        font-size: 32px;
+    }
+    
+    .hero p {
+        font-size: 20px;
+    }
+}
+.col-lg-9 {
+  display: inline-block;    /* inline-block으로 만들어야 margin 조정이 정확히 반영됩니다 */
+  margin-left: -380px;        /* 당기고 싶은 만큼 음수 값을 조정 */
+  margin-top: -130px;          /* 위로 당기는 값, 필요에 따라 조정 */
 
-  .hero p {
-    font-size: 20px;
-  }
 }
 
 /*--------------------------------------------------------------
@@ -676,101 +636,7 @@ section,
   font-size: 16px;
 }
 
-/*--------------------------------------------------------------
-# Skills Section
---------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  display: block;
-  background: none;
-  border-radius: 0;
-}
 
-.skills .progress .skill {
-  color: var(--heading-color);
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: var(--heading-font);
-}
-
-.skills .progress .skill .val {
-  float: right;
-  font-style: normal;
-}
-
-.skills .progress-bar-wrap {
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-  height: 10px;
-}
-
-.skills .progress-bar {
-  width: 1px;
-  height: 10px;
-  transition: 0.9s;
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Resume Section
---------------------------------------------------------------*/
-.resume .resume-title {
-  color: var(--heading-color);
-  font-size: 26px;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.resume .resume-item {
-  padding: 0 0 20px 20px;
-  margin-top: -2px;
-  border-left: 2px solid var(--accent-color);
-  position: relative;
-}
-
-.resume .resume-item h4 {
-  line-height: 18px;
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin-bottom: 10px;
-}
-
-.resume .resume-item h5 {
-  font-size: 16px;
-  padding: 5px 15px;
-  display: inline-block;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.resume .resume-item ul {
-  padding-left: 20px;
-}
-
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-}
-
-.resume .resume-item:last-child {
-  padding-bottom: 0;
-}
-
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: var(--background-color);
-  border: 2px solid var(--accent-color);
-}
 
 /*--------------------------------------------------------------
 # Portfolio Section
@@ -873,134 +739,6 @@ section,
   bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 60px 30px;
-  text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
-}
-
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
-}
-
-.services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
-}
-
-.services .service-item .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.services .service-item .icon svg path {
-  transition: 0.5s;
-  fill: color-mix(in srgb, var(--default-color), transparent 95%);
-}
-
-.services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-}
-
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
-}
-
-.services .service-item.item-cyan i {
-  color: #0dcaf0;
-}
-
-.services .service-item.item-cyan:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-cyan:hover .icon path {
-  fill: #0dcaf0;
-}
-
-.services .service-item.item-orange i {
-  color: #fd7e14;
-}
-
-.services .service-item.item-orange:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-orange:hover .icon path {
-  fill: #fd7e14;
-}
-
-.services .service-item.item-teal i {
-  color: #20c997;
-}
-
-.services .service-item.item-teal:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-teal:hover .icon path {
-  fill: #20c997;
-}
-
-.services .service-item.item-red i {
-  color: #df1529;
-}
-
-.services .service-item.item-red:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-red:hover .icon path {
-  fill: #df1529;
-}
-
-.services .service-item.item-indigo i {
-  color: #6610f2;
-}
-
-.services .service-item.item-indigo:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-indigo:hover .icon path {
-  fill: #6610f2;
-}
-
-.services .service-item.item-pink i {
-  color: #f3268c;
-}
-
-.services .service-item.item-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-pink:hover .icon path {
-  fill: #f3268c;
-}
 
 /*--------------------------------------------------------------
 # Testimonials Section
@@ -1083,85 +821,6 @@ section,
   background-color: var(--accent-color);
 }
 
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
 
 /*--------------------------------------------------------------
 # Portfolio Details Section
@@ -1338,138 +997,11 @@ section,
   padding: 0;
 }
 
-/*--------------------------------------------------------------
-# Service Details Section
---------------------------------------------------------------*/
-.service-details .service-box {
-  padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-details .service-box+.service-box {
-  margin-top: 30px;
-}
-
-.service-details .service-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.service-details .services-list a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-top: 15px;
-  transition: 0.3s;
-}
-
-.service-details .services-list a:first-child {
-  margin-top: 0;
-}
-
-.service-details .services-list a i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .services-list a.active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.service-details .services-list a.active i {
-  color: var(--contrast-color);
-}
-
-.service-details .services-list a:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a {
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.service-details .download-catalog a:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.service-details .download-catalog a:last-child {
-  padding-bottom: 0;
-}
-
-.service-details .download-catalog a i {
-  font-size: 24px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a:hover {
-  color: var(--accent-color);
-}
-
-.service-details .help-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  margin-top: 30px;
-  padding: 30px 15px;
-}
-
-.service-details .help-box .help-icon {
-  font-size: 48px;
-}
-
-.service-details .help-box h4,
-.service-details .help-box a {
-  color: var(--contrast-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
 
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+ 
 }
