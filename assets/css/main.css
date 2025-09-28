@@ -490,12 +490,15 @@ section,
     align-items: center;
     justify-content: center;
     
-    /* GIF 배경 설정 - 이게 전부! */
-    background-image: url('../img/logo_s.png');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
+    /* 다중 배경 이미지 설정 - 순서대로 위에 보이는 것이 앞 */
+    background-image: 
+        url('../img/last.gif'), /* 겹칠 GIF */
+        url('../img/logo_s.png');  /* 기존 배경 */
+    background-size: cover, cover;
+    background-position: center center, center center;
+    background-repeat: no-repeat, no-repeat;
 }
+
 
 /* 텍스트 가독성을 위한 오버레이 (선택사항) */
 .hero::before {
@@ -998,10 +1001,3 @@ section,
 }
 
 
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
- 
-}
