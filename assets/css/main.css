@@ -680,6 +680,48 @@ section,
   }
   .tool-item {
     gap: 10px;
+    justify-content: center;
+  }
+}
+
+.impactful-text {
+  font-weight: 800;
+  font-size: 1.2rem;        /* 좀 더 커진 글씨 */
+  color: var(--accent-color, #ff5722); /* 포인트 컬러, 필요시 변경 가능 */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* 입체감 */
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+  margin: 1.5rem 0;
+  font-family: 'Montserrat', 'Arial', sans-serif;
+  transition: color 0.3s ease;
+  cursor: default;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.impactful-text:hover {
+  color: #7f81b7;
+  text-shadow: 3px 3px 12px rgba(127, 129, 183, 0.7);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* 영어 문장은 약간 작게 */
+.impactful-text.english {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #7f81b7;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .impactful-text {
+    font-size: 1.2rem;
+    text-shadow: 1.5px 1.5px 6px rgba(0, 0, 0, 0.3);
+  }
+  .impactful-text.english {
+    font-size: 1.1rem;
   }
 }
 
