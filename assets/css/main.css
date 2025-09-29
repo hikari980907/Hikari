@@ -495,10 +495,18 @@ section,
         url('../img/last.gif'), /* 겹칠 GIF */
         url('../img/logo_s.png');  /* 기존 배경 */
     background-size: cover, cover;
-    background-position: center center, center center;
+    background-position: left center, left center;
     background-repeat: no-repeat, no-repeat;
 }
 
+/* 모바일에서는 GIF 제거, 로고만 표시 */
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('../img/logo_s.png'); /* GIF 제거 */
+        background-size: cover;
+        background-position: left center;
+    }
+}
 
 /* 텍스트 가독성을 위한 오버레이 (선택사항) */
 .hero::before {
@@ -508,7 +516,7 @@ section,
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.1);
     z-index: 1;
 }
 
@@ -564,11 +572,42 @@ section,
     }
 }
 .col-lg-9 {
-  display: inline-block;    /* inline-block으로 만들어야 margin 조정이 정확히 반영됩니다 */
-  margin-left: -380px;        /* 당기고 싶은 만큼 음수 값을 조정 */
-  margin-top: -130px;          /* 위로 당기는 값, 필요에 따라 조정 */
-
+    display: inline-block;
+    margin-left: -380px;        /* 데스크톱에서는 기존 값 유지 */
+    margin-top: -130px;
 }
+
+/* 태블릿 사이즈부터 조정 */
+@media (max-width: 1200px) {
+    .col-lg-9 {
+        margin-left: -200px;    /* 조금 덜 당기기 */
+    }
+}
+
+@media (max-width: 992px) {
+    .col-lg-9 {
+        margin-left: -100px;    /* 더 덜 당기기 */
+    }
+}
+
+/* 모바일에서는 중앙 정렬 */
+@media (max-width: 768px) {
+    .col-lg-9 {
+        margin-left: 0;         /* 왼쪽 마진 제거 */
+        text-align: center;     /* 중앙 정렬 */
+        padding: 0 20px;        /* 좌우 여백 추가 */
+    }
+}
+
+@media (max-width: 480px) {
+    .col-lg-9 {
+        margin-left: 0;
+        text-align: center;
+        padding: 0 15px;        /* 작은 화면에서 여백 줄이기 */
+        margin-top: -50px;      /* 위쪽 마진도 조정 */
+    }
+}
+
 
 /*--------------------------------------------------------------
 # About Section
@@ -598,6 +637,50 @@ section,
   margin-right: 5px;
   color: var(--accent-color);
   line-height: 0;
+}
+
+.tool-item {
+  display: flex;
+  flex-wrap: wrap;        /* 줄바꿈 허용 */
+  justify-content: left;/* 중앙 정렬 */
+  gap: 40px;              /* 아이템 간격 */
+  margin: 20px 0;         /* 위‧아래 여백 */
+}
+
+.tool-icon {
+  width: 50px;            /* 기본 너비 */
+  height: 50px;           /* 기본 높이 */
+  object-fit: contain;    /* 원본 비율 유지 */
+  transition: transform 0.3s ease;
+}
+
+/* 호버 시 확대 */
+.tool-icon:hover {
+  transform: scale(1.8) rotate(-360deg);
+  transition: transform 0.6s ease;
+}
+
+/* 반응형: 태블릿 */
+@media (max-width: 992px) {
+  .tool-icon {
+    width: 64px;
+    height: 64px;
+  }
+  .tool-item {
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+/* 반응형: 모바일 */
+@media (max-width: 768px) {
+  .tool-icon {
+    width: 48px;
+    height: 48px;
+  }
+  .tool-item {
+    gap: 10px;
+  }
 }
 
 /*--------------------------------------------------------------
