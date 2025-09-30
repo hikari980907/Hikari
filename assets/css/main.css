@@ -497,14 +497,17 @@ section,
     background-size: cover, cover;
     background-position: left center, left center;
     background-repeat: no-repeat, no-repeat;
+    
 }
 
 /* 모바일에서는 GIF 제거, 로고만 표시 */
 @media (max-width: 768px) {
     .hero {
-        background-image: url('../img/logo_s.png'); /* GIF 제거 */
-        background-size: cover;
-        background-position: left center;
+        background-image: 
+            url('../img/only_logo.png'),
+            url('../img/only-backgr.png'); /* 겹칠 png */;
+        background-size: 200px, cover;
+        background-position: center 180px, center;
     }
 }
 
@@ -516,7 +519,7 @@ section,
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -612,52 +615,251 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-.about .content h2 {
-  font-weight: 700;
-  font-size: 24px;
+/* About Section Improvements */
+.about .section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 10px;
+  font-style: italic;
 }
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.about .content ul strong {
-  margin-right: 10px;
-}
-
-.about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
-  color: var(--accent-color);
-  line-height: 0;
-}
-
-.tool-item {
-  display: flex;
-  flex-wrap: wrap;        /* 줄바꿈 허용 */
-  justify-content: left;/* 중앙 정렬 */
-  gap: 40px;              /* 아이템 간격 */
-  margin: 20px 0;         /* 위‧아래 여백 */
-}
-
-.tool-icon {
-  width: 50px;            /* 기본 너비 */
-  height: 50px;           /* 기본 높이 */
-  object-fit: contain;    /* 원본 비율 유지 */
+/* Profile Section */
+.profile-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   transition: transform 0.3s ease;
 }
 
-/* 호버 시 확대 */
-.tool-icon:hover {
-  transform: scale(1.8) rotate(-360deg);
-  transition: transform 0.6s ease;
+.profile-wrapper:hover {
+  transform: translateY(-5px);
+}
+
+.profile-img {
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.profile-badge {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+/* Intro Section */
+.intro-section {
+  margin-bottom: 2rem;
+}
+
+.name-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #7f81b7 0%, #5c3d7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.role-subtitle {
+  color: #666;
+  font-weight: 300;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Quote Section */
+.quote-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(87, 98, 150, 0.1), rgba(101, 69, 133, 0.1));
+  border-radius: 15px;
+  border-left: 4px solid var(--accent-color, #242c4d);
+}
+
+.main-quote {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #cccccc;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.sub-quote {
+  font-size: 1.1rem;
+  color: #4b4b4b;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Contact Cards */
+.contact-cards {
+  margin: 2rem 0;
+}
+
+.info-card {
+  background: rgb(41, 41, 41);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.info-card.freelance-available {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+}
+
+.info-card.freelance-available .card-content h5,
+.info-card.freelance-available .card-content p {
+  color: white;
+}
+
+.card-icon {
+  font-size: 2rem;
+  color: var(--accent-color, #667eea);
+  min-width: 50px;
+}
+
+.info-card.freelance-available .card-icon {
+  color: white;
+}
+
+.card-content h5 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-top: 2rem;
+}
+
+.skills-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.tool-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  background: rgb(41, 41, 41);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tool-item:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.tool-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+/* Tooltip */
+.tool-item::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tool-item:hover::after {
+  opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .name-title {
+    font-size: 2.5rem;
+  }
+  
+  .quote-section {
+    padding: 1.5rem;
+  }
+  
+  .main-quote {
+    font-size: 1.1rem;
+  }
+  
+  .sub-quote {
+    font-size: 1rem;
+  }
+  
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  
+  .tool-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .card-icon {
+    font-size: 1.5rem;
+  }
 }
 
 /* 반응형: 태블릿 */
@@ -724,45 +926,45 @@ section,
     font-size: 1.1rem;
   }
 }
-
-/*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
-.stats i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  width: 54px;
-  height: 54px;
-  font-size: 24px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
+@media (max-width: 768px) {
+  .container,
+  .content,
+  .creative-tools,
+  .tools-container,
+  .tool-item,
+  .img-fluid,
+  .impactful-text,
+  .col-lg-4,
+  .col-lg-8,
+  .col-lg-6 {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    float: none !important;
+  }
+  .tools-container,
+  .tool-item {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    z-index: 1; /* 기본 z-index 설정 */
+  }
+  .tool-item:hover {
+  transform: translateY(-8px) scale(1.1);
+  z-index: 999; /* 호버 시 최상단으로 */
+}
+  .tool-icon {
+    display: inline-block;
+    margin: 2px 2px !important;
+  }
+  ul {
+    display: inline-block;
+    text-align: left;
+    margin: 10px auto !important;
+  }
 }
 
-.stats .stats-item {
-  margin-top: 10px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  z-index: 0;
-}
 
-.stats .stats-item span {
-  font-size: 36px;
-  display: block;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.stats .stats-item p {
-  padding: 0;
-  margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-}
 
 
 
