@@ -663,7 +663,7 @@ section,
 .name-title {
   font-size: 3rem;
   font-weight: 700;
-  background: linear-gradient(135deg, #7f81b7 0%, #5c3d7a 100%);
+  background: #7f81b7;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
