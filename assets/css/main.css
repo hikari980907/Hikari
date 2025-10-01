@@ -493,7 +493,7 @@ section,
     /* 다중 배경 이미지 설정 - 순서대로 위에 보이는 것이 앞 */
     background-image: 
         url('../img/last.gif'), /* 겹칠 GIF */
-        url('../img/logo_s.png');  /* 기존 배경 */
+        url('../img/logo_ss.png');  /* 기존 배경 */
     background-size: cover, cover;
     background-position: left center, left center;
     background-repeat: no-repeat, no-repeat;
