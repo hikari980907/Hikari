@@ -88,7 +88,7 @@ a {
   transition: 0.3s;
 }
 
-/* iOS 등에서 전화번호 자동링크 색 변경 방지 */
+/* iOS 등에서 전화번호 자동링크 색 변경 방지 (전화번호 링크에 대한 스타일 제거) */
 a[href^="tel:"] {
   color: inherit !important;
   -webkit-tap-highlight-color: transparent;
