@@ -220,4 +220,27 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+  /**
+   * Make entire portfolio card clickable
+   */
+  document.querySelectorAll('.portfolio .portfolio-item').forEach((card) => {
+    const detailsLink = card.querySelector('.details-link');
+    if (!detailsLink) return;
+    const href = detailsLink.getAttribute('href');
+    if (!href) return;
+
+    // Set cursor style for visual affordance
+    card.style.cursor = 'pointer';
+
+    // Prevent nested link from hijacking events (so hover remains but click is on card)
+    detailsLink.addEventListener('click', (e) => {
+      e.preventDefault();
+    });
+
+    // Navigate on card click
+    card.addEventListener('click', () => {
+      window.location.href = href;
+    });
+  });
+
 })();
