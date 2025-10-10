@@ -1278,6 +1278,34 @@ section,
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: var(--accent-color);
 }
+/* 1. .swiper-pagination이 전체 폭을 차지하도록 설정 */
+.portfolio-details-slider .swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;      /* 내부 불렛들을 중앙 정렬 */
+  z-index: 10;
+  left: 0;                 /* 부모 컨테이너 기준 왼쪽 정렬 */
+  transform: none;         /* 기존 transform 제거 */
+}
+
+/* 2. 불렛 스타일 유지 */
+.portfolio-details-slider .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  margin: 0 6px;           /* 좌우 마진으로 간격 유지 */
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* 활성 불렛 강조 스타일 */
+.portfolio-details-slider .swiper-pagination-bullet-active {
+  background-color: #ffffff;   /* 강조 색상 */
+  transform: scale(1.3);       /* 크기 확대 */
+  opacity: 1;                  /* 완전 불투명 */
+}
+
 
 
 /*--------------------------------------------------------------
@@ -1329,16 +1357,7 @@ section,
   position: relative;
 }
 
-.portfolio-details .swiper-pagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
 
-.portfolio-details .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
 
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;

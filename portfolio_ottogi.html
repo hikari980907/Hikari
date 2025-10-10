@@ -26,6 +26,10 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+/>
 
 
 </head>
@@ -79,57 +83,55 @@
     </div>
 
     <div class="row justify-content-between gy-4 mt-4">
-      <div class="col-lg-8" data-aos="fade-up">
+      <div class="col-lg-12" data-aos="fade-up">
         <div class="portfolio-description">
-          <h2>AI 광고영상제작 : 오뚜기 삼분 카레</h2>
+          <h2> AI 광고영상 :  오뚜기 카레에 부탁해</h2>
           <hr>
           <br>
-          <p>📌 영상 소개</p>
-          <p>
-            이 영상은 AI 활용 광고 제작 과제로 기획한 연습작입니다. <br>
-            오뚜기 삼분 카레 광고를 주제로, AI 기반 툴을 다각도로 활용한 영상 제작 과정을 실험했습니다. 단순히 이미지를 생성하고 변환하는 수준을 넘어, “AI를 활용하는 사람”을 AI 영상 속에 표현하여 차별화된 연출을 시도했습니다.
-          </p>
-          <p>🎯 기획 의도</p>
-          <p>
-            주제는 “AI를 활용한 광고 제작”이었지만, 단순히 결과물만 보여주는 대신 사람과 AI의 상호작용 자체를 드라마처럼 담는 방식을 선택했습니다.
-            영상 속 화자는 AI에게 “추운 날 배고프고 우울한 사람”의 이미지를 요청하고, 이어서 따뜻한 음식을 먹으며 행복해지는 장면을 계속해서 수정 요청합니다. 하지만 AI는 끝내 “그런 건 오뚜기 삼분 카레에 부탁해”라는 메시지를 전하며, 오뚜기 삼분 카레가 간편한 조리로 배고픔과 추위를 해소해주는 최고의 해결책임을 강조합니다. <br>
-            이를 통해 광고 메시지를 재미있고 직관적으로 전달하고자 했습니다.
+          <br><br>
+          <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 20000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
 
-          </p>
-          <p>📍 추가 정보</p>
-          <p>
-            본 영상은 포트폴리오용 비상업적 창작물이며, AI 광고 제작 실습 과제를 바탕으로 제작되었습니다.
-          </p>
-        </div>
-      </div>
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio_details/ottogi/1.png" alt="">
+            </div>
 
-      <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-        <div class="portfolio-info">
-          <h3>Project information</h3>
-          <ul>
-            <li><strong>Tools</strong> Adobe Premiere Pro  <br>Adobe After Effects <br> Image FX · Digen AI · Suno AI · Typecast</li>
-            <li><strong>Duration</strong> 5 Hours</li>
-            <li><strong>Role</strong> 기획 · 프롬프트 작성 <br> 편집 · 배너 디자인</li>
-            <li><strong>Contribution</strong> 100(%)</li>
-            <li>
-              <strong>Project URL</strong>
-              <a href="https://youtu.be/tpx98Aeh3Pk" target="_blank" rel="noopener noreferrer">
-                https://youtu.be/ottogi
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://youtu.be/tpx98Aeh3Pk"
-                class="btn-visit align-self-start"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Website
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio_details/ottogi/2.png" alt="">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio_details/ottogi/3.png" alt="">
+            </div>
+
+            <div class="swiper-slide">
+              <img src="assets/img/portfolio_details/ottogi/4.png" alt="">
+            </div>
+
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+
     </div>
   </div>
 </section>
